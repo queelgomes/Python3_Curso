@@ -1,0 +1,188 @@
+AULA 4 - PRIMEIROS COMANDOS EM PYTHON3
+
+    print('Hello, world.') //saída: Hello, world.
+    print(7+4) //saída: 11
+    print('7'+'4') //saída: 74 ->> Aqui ele juntas os caracteres que estão em aspas.
+    print('7+4') //saída: 7+4 ->> Aqui tudo é texto
+
+    + e , tem a função de somar. Mas algumas situações funcionam diferente. 
+    + é indicado quando é para unir texto e texto. Se for com número, tem que colocar , . 
+    
+    Ex.:
+    print('Olá'+5) //saída: ERRO
+    print('Olá',5) //saída: Olá 5
+
+    TODA VARIÁVEL É UM OBJETO PARA O PYTHON!
+    
+    = se lê 'recebe'
+
+    Para escrever uma variável você colocar o nome que você quer, o simbolo = e a mensagem da variável.
+
+    Ex.:
+    nome = 'Raquel' ->> não precisa de parenteses na variável.
+    idade = 30
+    peso = 67.5
+    print(nome,idade,peso) //saída: Raquel 30 67.5 ->> Aqui coloquei virgula porque as variáveis contem números. Se colocar mais da erro.
+
+    print = escreva
+    input = receba o valor que for digitado.
+
+    Ex.:
+    nome = input('Qual o seu nome?')
+    print(nome) //saída: Qual o seu nome? (digita o nome que vc quer e da enter) Raquel ->> Aqui ele só imprime quando o input receber a informação que você der.
+
+DESAFIO 03 - PRIMEIROS COMANDOS
+    nome = 'Raquel'
+    print('Seu nome é ',nome) //saída: Seu nome é Raquel
+
+    Para melhorar o código acima, posso colocar o {} onde quero que entre a variavel e no final coloco: .format(nome)
+    Fica assim:
+    nome = 'Raquel''
+    print('Seu nome é {}.'.format(nome))
+
+    # o que vier após a hashtag é comentário.
+
+AULA 06 - TIPOS PRIMITIVOS E SAÍDA DE DADOS.
+    Existem 4 classes:
+    • Números inteiros
+    • Números reais
+    • Valores lógicos ou Boleanos
+    • Strings
+    
+    Numeros inteiros:
+        int() -> Aqui tudo o que tiver dentro dos parenteses será número inteiro. Sem vírgula.
+        Ex.: 7 4 -2 0 8391283 ->> todos sao inteiros   
+    Numeros reais/flutuantes (oq vem apos o ponto):
+        float()
+        Ex.: 4.5 0.045 -12.9892 7.0
+    Boleanos
+        Os resultados são true ou false
+    Strings
+        Tudo o que esta entre aspas simples ou duplas.
+        Ex.:'ana' '5' ''
+    
+    ** Para saber a de uma variável, pode imprimir no console com type() assim:
+    n1 = 1
+    print(type(n1))
+
+    Se quero que o resultado da variavel seja de uma classe, preciso especificar no inicio.
+    Ex.: n1 = int(input('digite um numero:')) //saída: coloco 1.
+        print(type(n1)) //saída: <class 'int'>
+
+    Se quiser testar a variavel para saber se é do dicionário numérico, alpha ou alphanumerico, você pode colocar assim:
+    n1 = 1
+    print(n1.isalpha()) //saída: false
+    print('n1.isnumeric()) //saída: true
+    print('n1.isalnum) //saída: true
+    tem varios is que vc consegue testar os tipos da variavel. -> exercicio 04
+
+AULA 07 - OPERADORES ARITMÉTICOS
+    + : adição
+    - : subtração
+    * : multiplicação
+    / : divisão
+    ** : potência
+    // : divisão inteira
+    % : resto da divisão
+    
+    Ordem de precedencia:
+    1. ()
+    2. **
+    3. * / // %
+    4. + -
+
+AULA 08 - UTILIZANDO MÓDULOS
+    Para usar um modulo, você precisa importa-lo.
+    Ex.
+    bebida = coca, cha, cafe, agua, leite
+    comida = pizza, arroz, hamburguer, sopa
+    doce = brigadeiro, donuts, sorvete, pudim
+
+    Para importar um modulo inteiro coloca importe e o modulo. Assim:
+    import bebida
+
+    Pra importar um item do bloco, coloca assim:
+    from bebida import cafe
+
+    >> math (matematica) é uma biblioteca que ja vem com o python.
+    Para utiliza-la você pode importar toda a biblioteca dela assim:
+    >> import math
+    Ou só a função desejada:
+    from math import sqrt, ceil ->> aqui importamos a funcao sqrt e ceil
+
+    import math
+    num = int(input('Digite um número:')) // Aqui é importante colocar int ou float para o resultado ser numero e nao string.
+    raiz = math.sqrt(num)
+    print('A raiz quadrada de {} é igual a {}.'.format(num, raiz))
+
+AULA 09 - MANIPULANDO TEXTOS
+    Conseguimos manipular strings dentro do python.
+    Exemplo
+    
+    frase = 'Curso em vídeo de Python'
+    
+    Cada letra esta um posição, começando pela posição 0. 
+    Entao no total temos 24 posições, pois os espaços contam. 
+    
+    frase = 'Curso em vídeo de Python'
+    print(len(frase)) // saída: 24 ->> essa função conta quantos item tem na string.
+
+    Existe algumas formas de fatiar essa string. Alguns exemplos:
+
+    frase[3] //saída: s
+
+    frase[3:17] //saída: so em vídeo de ->> aqui pega do item 3 até o 13.
+
+    frase[:17] //saída: Curso em vídeo de ->> quando nao tem tiver numero no inicio, é pq pega no inicio, se tiver no final, pega o ultimo item.
+
+    frase[2:20:4])//saída: reí P ->> ele pega do item 2 ate o 20 e pula de 4 em 4.
+
+    frase[::2]) //saída: Croe íe ePto ->> Aqui nao informei o item de inicio e final entao ele pegou a string inteira com intervalo de 2 e 2.
+
+    print("""Aqui esta um texto grande no qual quero escrever,
+    mas nao quero escrever varios prints,
+    e quero que va mudando de linha automaticamente.""") ->> Basta escrever com 3 aspas simples ou dupla.
+
+    frase.count('o') //saída: 3 -> Aqui ele conta quantas vezes apareceu a letra 'o'
+
+    frase.upper().count('O') //saída: 3 ->> Aqui é uma combinação pois nao tem o maiusculo na frase. entao primeiro joguei tudo pra maiusculo com o upper e depois contei.
+
+    frase.replace('Python', 'Java Script')
+
+AULA 10 - CONDIÇÕES
+    Estrutura Sequencial : é quando existe uma sequencia de métodos onde não tem como alterar isso. Um método vai sendo executado após o outro.
+    if n >= 3:
+        print('É maior que 3.')
+    else:
+        print('Não é maior que 3.')
+    
+    Estrutura condicional simples é quando só tem o if .
+    Estrutura condicional composta é quando tem o if e o else.
+    Estrutura condicional simplificada é quando escreve tudo na mesma linha o if e o else. Assim:
+    print('True'if 1=1 else 'False')
+
+AULA 11 - CORES NO TERMINAL
+    Sempre que quiser representar um cor no Python coloca \033[style;text;backm, assim:
+    tem 3 valores. O primeiro style, depois texto e depois fundo.
+    Style tem   0 = none
+                1 = bold
+                4 = underline
+                7 = negative
+    Text tem    30 = branco
+                31 = vermelho
+                32 = verde
+                33 = amarelo
+                34 = azul
+                35 = rosa
+                36 = turquesa
+                37 = cinza
+    Back tem    40 = branco
+                41 = vermelho
+                42 = verde
+                43 = amarelo
+                44 = azul
+                45 = rosa
+                46 = turquesa
+                47 = cinza
+    Exemplo:
+    print('\033[1;34;40mOlá, Mundo!')
